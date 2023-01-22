@@ -63,6 +63,11 @@ public class Bus<B extends ClassD> extends Transport implements Competing {
 
 
     }
+
+    @Override
+    void checkTeam() {
+    }
+
     @Override
     public void getDiagnosed() throws CantCheckException {
         throw new CantCheckException("Автобусы не могут проходить диагностику");
@@ -98,9 +103,9 @@ public class Bus<B extends ClassD> extends Transport implements Competing {
         }
 
         public void setType(String type) {
-            String Default = "Данных по транспортному средству недостаточно";
-            if (type == null || type.equals("")) {
-                this.type = Default;
+            String basic = "Данных по транспортному средству недостаточно";
+            if (type == null || type.isEmpty()) {
+                this.type = basic;
             } else {
                 this.type = type;
             }
@@ -116,11 +121,14 @@ public class Bus<B extends ClassD> extends Transport implements Competing {
 
     @Override
     public void start() {
+        System.out.println("Начинает движение");
 
     }
 
     @Override
     public void stop() {
+        System.out.println("Делает остановку");
+
 
     }
     public void drive(B classD){

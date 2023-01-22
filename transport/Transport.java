@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public abstract class Transport implements Competing {
     private static final String pitStop="Уходит на Пит-Стоп";
     private static final String bestTime="Достигает лучшее время";
@@ -5,13 +9,23 @@ public abstract class Transport implements Competing {
     private static String brand;
     private String model;
     private double engineVolume;
+    private List<Mechanics> mechanics;
 
 
     public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
+        mechanics = new LinkedList<>();
     }
+
+
+
+    public List<Mechanics> getMechanics() {
+        return mechanics;
+    }
+
+      abstract void checkTeam();
 
     public void getDiagnosed() throws CantCheckException {
         
@@ -24,9 +38,9 @@ public abstract class Transport implements Competing {
     }
 
     public void setBrand(String brand) {
-        String Default = "default";
-        if (brand == null || brand.equals("")) {
-            this.brand = Default;
+        String basic = "basic";
+        if (brand == null || brand.isEmpty()) {
+            this.brand = basic;
         } else {
             this.brand = brand;
         }
@@ -37,9 +51,9 @@ public abstract class Transport implements Competing {
     }
 
     public void setModel(String model) {
-        String Default = "default";
-        if (model == null || model.equals("")) {
-            this.model = Default;
+        String basic = "basic";
+        if (model == null || model.isEmpty()) {
+            this.model = basic;
         } else {
             this.model = model;
         }

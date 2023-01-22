@@ -15,6 +15,12 @@ public class HeavyCar<A extends ClassC> extends Transport implements Competing{
         this.places = places;
         this.сapacity = сapacity;
     }
+
+    @Override
+    void checkTeam() {
+
+    }
+
     @Override
     public void getDiagnosed() {
 
@@ -45,9 +51,9 @@ public class HeavyCar<A extends ClassC> extends Transport implements Competing{
         }
 
         public void setType(String type) {
-            String Default = "Данных по транспортному средству недостаточно";
-            if (type == null || type.equals("")) {
-                this.type = Default;
+            String basic = "Данных по транспортному средству недостаточно";
+            if (type == null || type.isEmpty()) {
+                this.type = basic;
             } else {
                 this.type = type;
             }
@@ -118,11 +124,13 @@ public class HeavyCar<A extends ClassC> extends Transport implements Competing{
 
     @Override
     public void start() {
+        System.out.println("Начинает движение");
 
     }
 
     @Override
     public void stop() {
+        System.out.println("Делает остановку");
 
     }
 

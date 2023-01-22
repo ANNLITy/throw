@@ -6,9 +6,9 @@ public class ClassD extends Driver {
     }
 
     public void setLicenseD(String licenseD) {
-        String Default = "default";
-        if (licenseD == null || licenseD.equals("")) {
-            this.licenseD = Default;
+        String basic = "basic";
+        if (licenseD == null || licenseD.isEmpty()) {
+            this.licenseD = basic;
         } else {
             this.licenseD = licenseD;
         }

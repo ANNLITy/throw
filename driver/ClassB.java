@@ -6,8 +6,7 @@ public class ClassB extends Driver {
     }
 
     public void setLicenseB(String licenseB) throws LackOfDrivingLicense {
-        String Default = "default";
-        if (driversLicense == null || driversLicense.equals("")) {
+        if (driversLicense == null || driversLicense.isEmpty()) {
             throw new LackOfDrivingLicense("Отсутствуют водительские права");
         } else {
             this.licenseB = licenseB;
@@ -20,7 +19,7 @@ public class ClassB extends Driver {
     }
     @Override
     public void checkLicense() throws LackOfDrivingLicense {
-        if (driversLicense == null || driversLicense.equals("")) {
+        if (driversLicense == null || driversLicense.isEmpty()) {
             throw new LackOfDrivingLicense("Отсутствуют водительские права");
 
         }

@@ -10,9 +10,9 @@ public class ClassC extends Driver{
     }
 
     public void setLicenseC(String licenseC) {
-        String Default = "default";
-        if (licenseC == null || licenseC.equals("")) {
-            this.licenseC = Default;
+        String basic = "basic";
+        if (licenseC == null || licenseC.isEmpty()) {
+            this.licenseC = basic;
         } else {
             this.licenseC = licenseC;
         };

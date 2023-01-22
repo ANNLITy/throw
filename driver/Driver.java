@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Driver {
     public String fio;
     public String driversLicense;
@@ -11,24 +13,27 @@ public abstract class Driver {
 
     public Driver(String fio, String driversLicense, String experience) throws LackOfDrivingLicense {
         this.fio = fio;
-        if (driversLicense == null || driversLicense.equals("")) {
+        if (driversLicense == null || driversLicense.isEmpty()) {
             throw new LackOfDrivingLicense("Отсутствуют водительские права");
         } else {
             this.driversLicense = driversLicense;
         }
         this.experience = experience;
+
     }
     public void checkLicense() throws LackOfDrivingLicense{
 
     }
     public void start() {
+        System.out.println("Начинает движение");
 
     }
     public void stop(){
+        System.out.println("Останавливает автомобиль");
 
     }
     public void refuel(){
-
+        System.out.println("Заправляет автомобиль");
     }
 
     public String getFio() {
@@ -49,7 +54,7 @@ public abstract class Driver {
     }
 
     public void setDriversLicense(String driversLicense) throws LackOfDrivingLicense  {
-        if (driversLicense == null || driversLicense.equals("")) {
+        if (driversLicense == null || driversLicense.isEmpty()) {
             throw new LackOfDrivingLicense("Отсутствуют водительские права");
         } else {
             this.driversLicense = driversLicense;

@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+
 public class LightCar<L extends ClassB> extends Transport implements Competing {
+
     private String transmission;
     private int number;
     private int places;
@@ -15,6 +18,13 @@ public class LightCar<L extends ClassB> extends Transport implements Competing {
         this.body = body;
 
     }
+
+    @Override
+    void checkTeam() {
+        System.out.println();
+
+    }
+
     @Override
     public void getDiagnosed() {
 
@@ -47,9 +57,9 @@ public class LightCar<L extends ClassB> extends Transport implements Competing {
         }
 
         public void setType(String type) {
-            String Default = "Данных по транспортному средству недостаточно";
-            if (type == null || type.equals("")) {
-                this.type = Default;
+            String basic = "Данных по транспортному средству недостаточно";
+            if (type == null || type.isEmpty()) {
+                this.type = basic;
             } else {
                 this.type = type;
             }
@@ -105,10 +115,13 @@ public class LightCar<L extends ClassB> extends Transport implements Competing {
     @Override
     public void start() {
 
+
     }
 
     @Override
     public void stop() {
+        System.out.println("Делает остановку");
+
 
     }
 
