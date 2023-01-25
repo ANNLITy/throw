@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
     public static ArrayList<Transport> cars = new ArrayList<>();
-   public static ArrayList<Driver> drivers = new ArrayList<>();
+   public static Set<Driver> drivers = new HashSet<>();
     public static void main(String[] args) throws LackOfDrivingLicense, CantCheckException {
         try {
             Bus busOne = new Bus("", " M6 ", 1, 2, 3, "", 2, Bus.Places.AVERAGE);
@@ -29,10 +31,14 @@ public class Main {
             drivers.add(driverOne);
             drivers.add(driverTwo);
             drivers.add(driverThree);
+            drivers.add(driverOne);
+            drivers.add(driverTwo);
+            drivers.add(driverThree);
             carOne.getMechanics().add(mechanicOne);
             carOne.getMechanics().add(mechanicTwo);
-            System.out.println("Водитель : "+drivers.get(1).getFio()+" Механики: "+carOne.getMechanics().get(0).getFio()+
-                    " , "+carOne.getMechanics().get(1).getFio());
+            System.out.println(drivers);
+
+
 
 
         } catch (LackOfDrivingLicense e){

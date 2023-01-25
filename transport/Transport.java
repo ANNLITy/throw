@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public abstract class Transport implements Competing {
     private static final String pitStop="Уходит на Пит-Стоп";
@@ -9,19 +7,19 @@ public abstract class Transport implements Competing {
     private static String brand;
     private String model;
     private double engineVolume;
-    private List<Mechanics> mechanics;
+    private Set<Mechanics> mechanics;
 
 
     public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
-        mechanics = new LinkedList<>();
+        mechanics = new HashSet<>();
     }
 
 
 
-    public List<Mechanics> getMechanics() {
+    public Set<Mechanics> getMechanics() {
         return mechanics;
     }
 

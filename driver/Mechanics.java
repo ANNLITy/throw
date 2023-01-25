@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Mechanics {
     public String fio;
     public String company;
@@ -6,6 +8,20 @@ public class Mechanics {
         this.fio = fio;
         this.company = company;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mechanics mechanics = (Mechanics) o;
+        return Objects.equals(fio, mechanics.fio) && Objects.equals(company, mechanics.company);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fio, company);
+    }
+
     public void carryOutMaintenance(){
         System.out.println("Проводит тех. обслуживание");
     }
