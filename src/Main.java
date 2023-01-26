@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Main {
     public static ArrayList<Transport> cars = new ArrayList<>();
-   public static Set<Driver> drivers = new HashSet<>();
+
     public static void main(String[] args) throws LackOfDrivingLicense, CantCheckException {
         try {
             Bus busOne = new Bus("", " M6 ", 1, 2, 3, "", 2, Bus.Places.AVERAGE);
@@ -20,6 +20,7 @@ public class Main {
             ClassB driverOne = new ClassB("Антонов Антон Антонович", "Имеется", "", "");
             ClassC driverTwo = new ClassC("Андреев Андрей Андреевич", "Имеется", "");
             ClassD driverThree = new ClassD("Алексеев Алексей Алексеевич", "Имеется", "");
+            ClassB driverFour = new ClassB("Антонов Антон Антонович","Имеется", "","");
             Mechanics mechanicOne = new Mechanics("Андрей Андреевич","СтройАвто");
             Mechanics mechanicTwo = new Mechanics("Антон Антонович","Shell");
             carOne.drive(driverOne);
@@ -28,15 +29,13 @@ public class Main {
             cars.add(carOne);
             cars.add(carTwo);
             cars.add(busOne);
-            drivers.add(driverOne);
-            drivers.add(driverTwo);
-            drivers.add(driverThree);
-            drivers.add(driverOne);
-            drivers.add(driverTwo);
-            drivers.add(driverThree);
             carOne.getMechanics().add(mechanicOne);
             carOne.getMechanics().add(mechanicTwo);
-            System.out.println(drivers);
+            carOne.getDrivers().add(driverOne);
+            carOne.getDrivers().add(driverFour);
+            System.out.println(carOne.getDrivers());
+
+
 
 
 

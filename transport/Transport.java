@@ -8,6 +8,7 @@ public abstract class Transport implements Competing {
     private String model;
     private double engineVolume;
     private Set<Mechanics> mechanics;
+    private Set<Driver> drivers;
 
 
     public Transport(String brand, String model, double engineVolume) {
@@ -15,6 +16,10 @@ public abstract class Transport implements Competing {
         this.model = model;
         this.engineVolume = engineVolume;
         mechanics = new HashSet<>();
+        drivers = new HashSet<>();
+    }
+    public Set<Driver> getDrivers() {
+        return drivers;
     }
 
 

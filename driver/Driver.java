@@ -1,9 +1,25 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 public abstract class Driver {
     public String fio;
     public String driversLicense;
     public String experience;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Driver)) return false;
+        Driver driver = (Driver) o;
+        return Objects.equals(fio, driver.fio) && Objects.equals(driversLicense, driver.driversLicense) && Objects.equals(experience, driver.experience);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fio, driversLicense, experience);
+    }
 
     @Override
     public String toString() {
@@ -19,6 +35,7 @@ public abstract class Driver {
             this.driversLicense = driversLicense;
         }
         this.experience = experience;
+
 
     }
     public void checkLicense() throws LackOfDrivingLicense{
