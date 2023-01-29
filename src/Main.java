@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static ArrayList<Transport> cars = new ArrayList<>();
@@ -23,17 +20,22 @@ public class Main {
             ClassB driverFour = new ClassB("Антонов Антон Антонович","Имеется", "","");
             Mechanics mechanicOne = new Mechanics("Андрей Андреевич","СтройАвто");
             Mechanics mechanicTwo = new Mechanics("Антон Антонович","Shell");
+            Mechanics mechanicThree = new Mechanics("Андрей Андреевич","СтройАвто");
             carOne.drive(driverOne);
             carTwo.drive(driverTwo);
             busOne.drive(driverThree);
             cars.add(carOne);
             cars.add(carTwo);
             cars.add(busOne);
-            carOne.getMechanics().add(mechanicOne);
-            carOne.getMechanics().add(mechanicTwo);
             carOne.getDrivers().add(driverOne);
             carOne.getDrivers().add(driverFour);
             System.out.println(carOne.getDrivers());
+            HashMap<Transport,Mechanics> map = new HashMap<>();
+            map.put(carOne,mechanicOne);
+            map.put(carOne,mechanicTwo);
+            map.put(carOne,mechanicThree);
+            System.out.println(map.get(carOne));
+
 
 
 

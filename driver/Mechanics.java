@@ -12,7 +12,7 @@ public class Mechanics {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Mechanics)) return false;
         Mechanics mechanics = (Mechanics) o;
         return Objects.equals(fio, mechanics.fio) && Objects.equals(company, mechanics.company);
     }
