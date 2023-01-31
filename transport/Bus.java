@@ -79,11 +79,7 @@ public class Bus<B extends ClassD> extends Transport implements Competing {
         return "Bus{" + " " + places;
     }
 
-    @Override
-    void printType() {
-        System.out.println();
 
-    }
 
     public enum Places {
         ESPECIALlYSMALL("до 10 мест"),

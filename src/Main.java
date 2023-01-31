@@ -32,9 +32,11 @@ public class Main {
             System.out.println(carOne.getDrivers());
             HashMap<Transport,Mechanics> map = new HashMap<>();
             map.put(carOne,mechanicOne);
-            map.put(carOne,mechanicTwo);
-            map.put(carOne,mechanicThree);
+            map.put(busOne,mechanicOne);
+            map.put(carTwo,mechanicOne);
             System.out.println(map.get(carOne));
+            System.out.println(map.get(carTwo));
+            System.out.println(map.get(busOne));
 
 
 

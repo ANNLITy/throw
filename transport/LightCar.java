@@ -37,11 +37,6 @@ public class LightCar<L extends ClassB> extends Transport implements Competing {
                 '}';
     }
 
-    @Override
-    void printType() {
-        System.out.println();
-
-    }
 
     static enum Body{
         SEDAN("Седан"),HETCHBACK("Хэтчбэк"),CUPE("Купе"),UNIVERSAL("Универсал"),

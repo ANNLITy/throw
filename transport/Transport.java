@@ -98,6 +98,17 @@ public abstract class Transport implements Competing {
                 ", engineVolume=" + engineVolume +
                 '}';
     }
-    abstract void printType();
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Transport)) return false;
+        Transport transport = (Transport) o;
+        return Objects.equals(model, transport.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(model);
+    }
 }

@@ -31,10 +31,7 @@ public class HeavyCar<A extends ClassC> extends Transport implements Competing{
         return "HeavyCar{"+" "+ сapacity;
     }
 
-    @Override
-    void printType() {
 
-    }
 
     public enum Type {
         N1("Грузоподъемность: до 3,5 тонн "),
